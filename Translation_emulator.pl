@@ -69,7 +69,7 @@ my(%genetic_code) = ( #hash file named genetic_code with 'XXX'->keys and 'X'->va
     'GGT' => 'G',    # Glycine
     );
 
-my @keys=keys(%genetic_code); #makes an array named keys that has the keys of the genetic_code hash.
+my @keys=keys(%genetic_code); #makes an array named "keys" that has the keys of the genetic_code hash.
 
 open(IN,"<DNA_seq.txt") or die ("Input file not opened");
 
@@ -78,7 +78,7 @@ my $title=<IN>; #reads the very first line of the text file.
 my $protein='';
 my $protein1='';
 my $protein2='';
-my $dna=''; #declare $dna string &empty string to concatenate to later.
+my $dna=''; #declare $dna string as an empty string to concatenate later.
 
 # read the whole text and combine all lines together to one sequence.
 while (my $seq=<IN>) {
@@ -123,9 +123,3 @@ print "Protein with reading frame from 3rd nucleotide is:\n $protein2\n";
 close(IN); #closes the text file.
 
 my $line=<STDIN>; #keeps .exe open til I press enter.
-
-
-
-#my @proteins = map { $codes =~ /^.{$_}((?:...)*?)(?=TAA|TAG|TGA|.{0.2}$)/ } 0..2;
-#my @proteins = map { $codes =~ /^.{$_}(?:...)*ATG((?:...)*?)(?=TAA|TAG|TGA|.{0.2}$)/ } 0..2;  # should start at ATG (untested)
-#s/(...)/$genetic_code{$1}/g for @proteins;  # to fix up codes with values
