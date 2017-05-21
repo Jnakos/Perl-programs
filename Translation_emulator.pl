@@ -71,7 +71,7 @@ my(%genetic_code) = ( #hash file named genetic_code with 'XXX'->keys and 'X'->va
 
 my @keys=keys(%genetic_code); #makes an array named "keys" that has the keys of the genetic_code hash.
 
-open(IN,"<DNA_seq.txt") or die ("Input file not opened");
+open(IN,"<DNA_seq.txt") or die ("Input file not opened"); # DNA_seq.txt must be changed according to each user's inpute file.
 
 #declare variables.
 my $title=<IN>; #reads the very first line of the text file.
